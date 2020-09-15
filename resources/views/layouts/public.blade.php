@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/app.css?ver={{ \Carbon\Carbon::now()->format('YmdHis') }}">
-    <title>Admin Control Panel</title>
+    <title>David Olson | Full-Stack Web Developer</title>
 </head>
 <body class="home">
     @if(session('message.text'))
