@@ -3,10 +3,10 @@
 @section('content')
     <header>
         <div class="grid-x grid-padding-x">
-            <div class="auto cell">
+            <div class="large-auto cell large-order-1 medium-order-2 small-order-2">
                 <h1>davewritesco.de</h1>
             </div>
-            <div class="shrink cell">
+            <div class="shrink large-order-2 medium-order-1 small-order-1 cell">
                 @include('public.components.nav')
             </div>
         </div>
@@ -25,7 +25,7 @@
                 <p>I live in Charleston with my beautiful wife Rebecca and our dog Genevieve. I drink what is probably considered an agressive amount of coffee, typcally in the form of espresso. I will correct you if you say e<b>s</b>presso wrong. My wife will too. We play a lot of board games around here, so be prepared for me to ask you about your strategy in Catan (2 wheats for 1 rock? Anyone?) or explain why Contessa / Assassin is the best combo in Coup. I keep track of scores and have winning percentages and point differentials on everyone who has played a game at my house for the last 2 years or so.</p>
                 <p>Before quarantine you may have found me at one of my favorite neighborhood bbq bars, coffee shops, or parks. Now I spend my time in places as diverse as my couch, my desk chair, or the other chair that is next to my couch.</p>
             </div>
-            <div class="large-4 large-offset-2 cell text-right">
+            <div class="large-4 large-offset-2 cell large-text-right">
                 <div class="block">
                     <h2>Interests</h2>
                     <p><small>You may have already read these on the homepage but here they are again.</small></p>

@@ -8,15 +8,19 @@
                 <h2 class="intro-sub">Full Stack Web Development
                     <br>Charleston, SC</h2>
                 <p><a href="#" class="twitter no-ul">{{ '@davewritescode' }}</a> <a href="#" class="insta no-ul">{{ '@davidolson' }}</a></p>
-                <div class="image">
-                    <p id="image">{!! $image !!}</p>
+                <div class="grid-x">
+                    <div class="large-12 cell large-order-1 medium-order-2 small-order-2">
+                        <div class="image">
+                            <p id="image">{!! $image !!}</p>
+                        </div>
+                    </div>
+                    <div class="large-12 cell large-order-2 medium-order-1 small-order-1"><p>Full stack web developer with experience in web applications, front-end development, design, and advertising. Self-taught in web development after starting a design career in advertising. Eager to expand knowledge of programming and software development. Driven to make any application or website accessible for all users so they can accomplish their goals easily, quickly, and efficiently.</p></div>
                 </div>
-                <p>Full stack web developer with experience in web applications, front-end development, design, and advertising. Self-taught in web development after starting a design career in advertising. Eager to expand knowledge of programming and software development. Driven to make any application or website accessible for all users so they can accomplish their goals easily, quickly, and efficiently.</p>
                 <div class="now-playing">
 
                 </div>
             </div>
-            <div class="large-4 large-offset-2 cell text-right">
+            <div class="large-4 large-offset-2 cell large-text-right">
                 <div class="block">
                     <h2>Portfolio</h2>
                     <a class="portfolio-link" href="{{ route('public.projects.index') }}">View Recent Projects</a>

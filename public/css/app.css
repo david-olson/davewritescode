@@ -7548,6 +7548,12 @@ hr {
   border-bottom-color: #ECFFD8;
 }
 
+@media print, screen and (min-width: 64em) {
+  .large-text-right {
+    text-align: right;
+  }
+}
+
 .using p {
   margin-bottom: 0;
 }
@@ -7696,7 +7702,7 @@ ul.project-list.has-active li button {
 
 ul.project-list button,
 ul.project-list a {
-  display: block;
+  display: flex;
   width: 100%;
   padding: 2rem 0.5rem;
   background: #35383A;
@@ -7707,17 +7713,7 @@ ul.project-list a {
   position: relative;
   text-decoration: none;
   line-height: 1;
-}
-
-ul.project-list button:after,
-ul.project-list a:after {
-  content: "More Info";
-  display: inline-block;
-  right: 0;
-  margin-left: 10px;
-  font-weight: 100;
-  opacity: 0;
-  transition: opacity 0.25s ease-out;
+  flex-wrap: wrap;
 }
 
 ul.project-list button:hover,
@@ -7737,11 +7733,49 @@ ul.project-list a .number {
   color: rgba(236, 255, 216, 0.25);
   font-weight: 100;
   margin-right: 2rem;
+  flex-shrink: 1;
+  flex-grow: 0;
+  font-size: 20px;
+}
+
+@media only screen and (min-width: 1300px) {
+  ul.project-list button .number,
+  ul.project-list a .number {
+    font-size: 24px;
+  }
 }
 
 ul.project-list button .title,
 ul.project-list a .title {
   font-weight: 700;
+  flex-grow: 1;
+  flex-shrink: 1;
+  font-size: 20px;
+}
+
+@media only screen and (min-width: 1300px) {
+  ul.project-list button .title,
+  ul.project-list a .title {
+    font-size: 24px;
+  }
+}
+
+ul.project-list button .mobile-details,
+ul.project-list a .mobile-details {
+  display: block;
+  flex-grow: 1;
+  flex-shrink: 0;
+  width: 100%;
+  font-weight: 100;
+  font-size: 18px;
+  margin-top: 1rem;
+}
+
+@media print, screen and (min-width: 64em) {
+  ul.project-list button .mobile-details,
+  ul.project-list a .mobile-details {
+    display: none;
+  }
 }
 
 ul.project-list button .blue-ion,
@@ -7754,6 +7788,14 @@ ul.project-list a .blue-ion {
   opacity: 0;
   transform: translateY(-10px);
   transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+  display: none;
+}
+
+@media print, screen and (min-width: 40em) {
+  ul.project-list button .blue-ion,
+  ul.project-list a .blue-ion {
+    display: block;
+  }
 }
 
 ul.project-list button:hover,
@@ -7790,7 +7832,13 @@ ul.project-list li > button.is-active {
 
 .project-display-area {
   position: relative;
-  padding-bottom: 41%;
+  padding-bottom: 95%;
+}
+
+@media print, screen and (min-width: 40em) {
+  .project-display-area {
+    padding-bottom: 41%;
+  }
 }
 
 .project-display-area article.project {
@@ -7842,16 +7890,24 @@ ul.project-list li > button.is-active {
 
 .project-display-area .monitor-placeholder {
   position: absolute;
-  top: 0;
-  height: 100%;
+  top: 37%;
+  height: 40%;
+  transform: translate(-50%, -50%);
   left: 50%;
-  transform: translateX(-50%);
   width: 90%;
+}
+
+@media print, screen and (min-width: 40em) {
+  .project-display-area .monitor-placeholder {
+    top: 80%;
+    height: 100%;
+  }
 }
 
 @media print, screen and (min-width: 64em) {
   .project-display-area .monitor-placeholder {
-    top: 100px;
+    top: 90px;
+    transform: translateX(-50%);
   }
 }
 
@@ -7860,11 +7916,36 @@ ul.project-list li > button.is-active {
   height: 100%;
 }
 
+header.single h1 {
+  margin-top: 3rem;
+  font-size: 16px;
+}
+
+@media print, screen and (min-width: 40em) {
+  header.single h1 {
+    font-size: 18px;
+  }
+}
+
+@media print, screen and (min-width: 64em) {
+  header.single h1 {
+    font-size: 28px;
+    margin-top: 0;
+  }
+}
+
 header.single h1 small {
   display: block;
   font-size: 18px;
   font-weight: 100;
   color: #ECFFD8;
+  margin-bottom: 1rem;
+}
+
+@media print, screen and (min-width: 64em) {
+  header.single h1 small {
+    margin-bottom: 0;
+  }
 }
 
 .preview-buttons {
@@ -7945,9 +8026,24 @@ span.role svg {
   opacity: 1;
 }
 
+@media print, screen and (max-width: 63.99875em) {
+  .secondary-project-details {
+    display: none;
+  }
+
+  .secondary-project-details.visible {
+    display: none;
+  }
+}
+
 main.single h2,
 main.single h3 {
   font-size: 24px;
+}
+
+main.single .project-display-area {
+  padding-bottom: 0;
+  margin-bottom: 2rem;
 }
 
 main.single .project-display-area .preview-image-holder {

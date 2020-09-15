@@ -30,6 +30,12 @@ hr {
 	border-bottom-color: $green;
 }
 
+.large-text-right {
+	@include breakpoint(large) {
+		text-align: right;
+	}
+}
+
 .using {
 	p {
 		margin-bottom: 0;
@@ -167,7 +173,7 @@ ul.project-list {
 		}
 	}
 	button, a {
-		display: block;
+		display: flex;
 		width: 100%;
 		padding: 2rem 0.5rem;
 		background: $dark;
@@ -178,14 +184,15 @@ ul.project-list {
 		position: relative;
 		text-decoration: none;
 		line-height: 1;
+		flex-wrap: wrap;
 		&:after {
-			content: "More Info";
-			display: inline-block;
-			right: 0;
-			margin-left: 10px;
-			font-weight: 100;
-			opacity: 0;
-			transition: opacity 0.25s ease-out;
+			// content: "More Info";
+			// display: inline-block;
+			// right: 0;
+			// margin-left: 10px;
+			// font-weight: 100;
+			// opacity: 0;
+			// transition: opacity 0.25s ease-out;
 		}
 		&:hover, &:focus, &.is-active {
 			outline: 0;
@@ -197,9 +204,33 @@ ul.project-list {
 			color: rgba($green, 0.25);
 			font-weight: 100;
 			margin-right: 2rem;
+			flex-shrink: 1;
+			flex-grow: 0;
+			font-size: 20px;
+			@media only screen and (min-width: 1300px) {
+				font-size: 24px;
+			}
 		}
 		.title {
 			font-weight: 700;
+			flex-grow: 1;
+			flex-shrink: 1;
+			font-size: 20px;
+			@media only screen and (min-width: 1300px) {
+				font-size: 24px;
+			}
+		}
+		.mobile-details {
+			display: block;
+			flex-grow: 1;
+			flex-shrink: 0;
+			width: 100%;
+			font-weight: 100;
+			font-size: 18px;
+			margin-top: 1rem;
+			@include breakpoint(large) {
+				display: none;
+			}
 		}
 		.blue-ion {
 			position: absolute;
@@ -210,6 +241,10 @@ ul.project-list {
 			opacity: 0;
 			transform: translateY(-10px);
 			transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+			display: none;
+			@include breakpoint(medium) {
+				display: block;
+			}
 		}
 		&:hover, &:focus, &.is-active {
 			opacity: 1;
@@ -229,7 +264,10 @@ ul.project-list {
 
 .project-display-area {
 	position: relative;
-	padding-bottom: 41%;
+	padding-bottom: 95%;
+	@include breakpoint(medium) {
+		padding-bottom: 41%;
+	}
 	article.project {
 		position: absolute;
 		top: 0;
@@ -277,13 +315,20 @@ ul.project-list {
 
 	.monitor-placeholder {
 		position: absolute;
-		top: 0;
-		height: 100%;
+		top: 37%;
+		height: 40%;
+		transform: translate(-50%, -50%);
+		@include breakpoint(medium) {
+			top: 80%;
+			height: 100%;
+		}
+
 		@include breakpoint(large) {
-			top: 100px;
+			top: 90px;
+			transform: translateX(-50%);
 		}
 		left: 50%;
-		transform: translateX(-50%);
+
 		width: 90%;
 		svg {
 			width: 100%;
@@ -297,14 +342,29 @@ ul.project-list {
 
 header.single {
 	h1 {
+		margin-top: 3rem;
+		font-size: 16px;
+		@include breakpoint(medium) {
+			font-size: 18px;
+		}
+		@include breakpoint(large) {
+			font-size: 28px;
+			margin-top: 0;
+		}
 		small {
 			display: block;
 			font-size: 18px;
 			font-weight: 100;
 			color: $green;
+			margin-bottom: 1rem;
+			@include breakpoint(large) {
+				margin-bottom: 0;
+			}
 		}
 	}
 }
+
+
 
 .preview-buttons {
 	display: inline-block;
@@ -372,6 +432,12 @@ span.tech, span.role {
 	&.fade-in {
 		opacity: 1;
 	}
+	@include breakpoint(medium down) {
+		display: none;
+		&.visible {
+			display: none;
+		}
+	}
 }
 
 main.single {
@@ -379,6 +445,8 @@ main.single {
 		font-size: 24px;
 	}
 	.project-display-area {
+		padding-bottom: 0;
+		margin-bottom: 2rem;
 		.preview-image-holder {
 			opacity: 1;
 			transform: translateY(0);

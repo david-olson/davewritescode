@@ -3,7 +3,7 @@
 @section('content')
 	<header class="single">
 		<div class="grid-x grid-padding-x">
-			<div class="auto cell">
+			<div class="large-auto medium-12 cell large-order-1 small-order-2 medium-order-2">
 				<h1>
 					@if($project->is_blue_ion)
 						<small>Completed at Blue Ion</small>
@@ -11,7 +11,7 @@
 					{{ $project->title }}
 				</h1>
 			</div>
-			<div class="shrink cell">
+			<div class="shrink cell large-order-2 medium-order-1 small-order-1">
 				@include('public.components.nav')
 			</div>
 		</div>
