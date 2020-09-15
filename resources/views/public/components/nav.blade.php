@@ -9,6 +9,6 @@
 		<a href="{{ route('public.about') }}">About</a>
 	</li>
 	<li>
-		<a href="#">Resume Download</a>
+		<a href="/pdf/David-Olson-Resume.pdf">Resume Download</a>
 	</li>
 </ul>
