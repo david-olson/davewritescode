@@ -7509,30 +7509,32 @@ body.home {
   background-color: #35383A;
 }
 
-body.home h1,
-body.home h2,
-body.home h3,
-body.home h4,
-body.home h5,
-body.home h6,
-body.home p,
-body.home label,
-body.home button {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label,
+button {
   font-family: "Inconsolata", monospace;
   color: #ECFFD8;
 }
 
-body.home a {
+a {
   color: #ECFFD8;
   transition: color 0.25s ease-out;
   text-decoration: underline;
 }
 
-body.home a.no-ul {
+a.no-ul {
   text-decoration: none;
 }
 
-body.home a:hover {
+a:hover,
+a:focus,
+a:active {
   color: #d3ffa5;
 }
 
@@ -7544,6 +7546,14 @@ h3 {
 
 hr {
   border-bottom-color: #ECFFD8;
+}
+
+.using p {
+  margin-bottom: 0;
+}
+
+.using a {
+  text-decoration: none;
 }
 
 .image {
@@ -7680,37 +7690,62 @@ ul.project-list li {
   border-bottom: 1px solid rgba(236, 255, 216, 0.25);
 }
 
-ul.project-list button {
+ul.project-list.has-active li button {
+  opacity: 0.25;
+}
+
+ul.project-list button,
+ul.project-list a {
   display: block;
   width: 100%;
   padding: 2rem 0.5rem;
   background: #35383A;
-  transition: background 0.25s ease-out;
+  transition: background 0.25s ease-out, opacity 0.25s ease-out;
   cursor: pointer;
   text-align: left;
   font-size: 24px;
   position: relative;
+  text-decoration: none;
+  line-height: 1;
+}
+
+ul.project-list button:after,
+ul.project-list a:after {
+  content: "More Info";
+  display: inline-block;
+  right: 0;
+  margin-left: 10px;
+  font-weight: 100;
+  opacity: 0;
+  transition: opacity 0.25s ease-out;
 }
 
 ul.project-list button:hover,
 ul.project-list button:focus,
-ul.project-list button.is-active {
+ul.project-list button.is-active,
+ul.project-list a:hover,
+ul.project-list a:focus,
+ul.project-list a.is-active {
   outline: 0;
   background: #292b2d;
+  color: #ECFFD8;
 }
 
-ul.project-list button .number {
+ul.project-list button .number,
+ul.project-list a .number {
   display: inline-block;
   color: rgba(236, 255, 216, 0.25);
   font-weight: 100;
   margin-right: 2rem;
 }
 
-ul.project-list button .title {
+ul.project-list button .title,
+ul.project-list a .title {
   font-weight: 700;
 }
 
-ul.project-list button .blue-ion {
+ul.project-list button .blue-ion,
+ul.project-list a .blue-ion {
   position: absolute;
   top: -8px;
   font-weight: 100;
@@ -7721,15 +7756,41 @@ ul.project-list button .blue-ion {
   transition: opacity 0.25s ease-out, transform 0.25s ease-out;
 }
 
+ul.project-list button:hover,
+ul.project-list button:focus,
+ul.project-list button.is-active,
+ul.project-list a:hover,
+ul.project-list a:focus,
+ul.project-list a.is-active {
+  opacity: 1;
+}
+
+ul.project-list button:hover:after,
+ul.project-list button:focus:after,
+ul.project-list button.is-active:after,
+ul.project-list a:hover:after,
+ul.project-list a:focus:after,
+ul.project-list a.is-active:after {
+  opacity: 1;
+}
+
 ul.project-list button:hover .blue-ion,
 ul.project-list button:focus .blue-ion,
-ul.project-list button.is-active .blue-ion {
+ul.project-list button.is-active .blue-ion,
+ul.project-list a:hover .blue-ion,
+ul.project-list a:focus .blue-ion,
+ul.project-list a.is-active .blue-ion {
   opacity: 1;
   transform: translateY(0);
 }
 
+ul.project-list li > button.is-active {
+  opacity: 1;
+}
+
 .project-display-area {
   position: relative;
+  padding-bottom: 41%;
 }
 
 .project-display-area article.project {
@@ -7750,39 +7811,12 @@ ul.project-list button.is-active .blue-ion {
   transform: translateX(-20px);
 }
 
-.project-display-area article.project .details span.tech svg,
-.project-display-area article.project .details span.role svg {
-  vertical-align: middle;
-  display: inline-block;
-  margin-right: 10px;
-  width: 30px;
-  height: 30px;
+.project-display-area article.project .details h2 {
+  font-size: 20px;
 }
 
 .project-display-area article.project .preview-button-grid {
   margin-top: 3rem;
-}
-
-.project-display-area article.project .preview-buttons {
-  display: inline-block;
-  padding: 1rem 1.5rem;
-  text-decoration: none;
-  background: rgba(236, 255, 216, 0);
-  transition: background 0.25s ease-out;
-  transform: translateX(-1.5rem);
-}
-
-.project-display-area article.project .preview-buttons svg {
-  max-width: 30px;
-  height: 25px;
-  vertical-align: middle;
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.project-display-area article.project .preview-buttons:hover {
-  color: #ECFFD8;
-  background: rgba(236, 255, 216, 0.1);
 }
 
 .project-display-area pre {
@@ -7806,11 +7840,109 @@ ul.project-list button.is-active .blue-ion {
   border: 6px solid #35383A;
 }
 
+.project-display-area .monitor-placeholder {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+}
+
+@media print, screen and (min-width: 64em) {
+  .project-display-area .monitor-placeholder {
+    top: 100px;
+  }
+}
+
+.project-display-area .monitor-placeholder svg {
+  width: 100%;
+  height: 100%;
+}
+
 header.single h1 small {
   display: block;
   font-size: 18px;
   font-weight: 100;
   color: #ECFFD8;
+}
+
+.preview-buttons {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  background: rgba(236, 255, 216, 0);
+  transition: background 0.25s ease-out;
+  transform: translateX(-1.5rem);
+  text-decoration: none;
+}
+
+.preview-buttons svg {
+  max-width: 30px;
+  height: 25px;
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.preview-buttons:hover,
+.preview-buttons:focus,
+.preview-buttons:active {
+  color: #ECFFD8;
+  background: rgba(236, 255, 216, 0.1);
+}
+
+span.tech svg,
+span.role svg {
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+}
+
+.project-details {
+  margin-left: 1.5rem;
+}
+
+.project-details span.tech,
+.project-details span.role {
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.project-details .preview-buttons {
+  margin-top: -1rem;
+}
+
+.secondary-project-details {
+  margin-top: 2rem;
+  padding-left: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-top: 1px solid #ECFFD8;
+  border-bottom: 1px solid #ECFFD8;
+  opacity: 0;
+  display: none;
+  transition: opacity 0.25s ease-out;
+}
+
+.secondary-project-details span.tech,
+.secondary-project-details span.role {
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.secondary-project-details .preview-buttons {
+  margin-top: -1rem;
+}
+
+.secondary-project-details.visible {
+  display: block;
+}
+
+.secondary-project-details.fade-in {
+  opacity: 1;
 }
 
 main.single h2,
@@ -7823,40 +7955,9 @@ main.single .project-display-area .preview-image-holder {
   transform: translateY(0);
 }
 
-main.single .preview-buttons {
-  display: inline-block;
-  padding: 1rem 1.5rem;
-  text-decoration: none;
-  background: rgba(236, 255, 216, 0);
-  transition: background 0.25s ease-out;
-  transform: translateX(-1.5rem);
-}
-
-main.single .preview-buttons svg {
-  max-width: 30px;
-  height: 25px;
-  vertical-align: middle;
-  display: inline-block;
-  margin-right: 10px;
-}
-
-main.single .preview-buttons:hover {
-  color: #ECFFD8;
-  background: rgba(236, 255, 216, 0.1);
-}
-
 main.single .details {
   margin-top: 3rem;
   margin-left: 2rem;
-}
-
-main.single span.tech svg,
-main.single span.role svg {
-  vertical-align: middle;
-  display: inline-block;
-  margin-right: 10px;
-  width: 30px;
-  height: 30px;
 }
 
 main.single .sections {
@@ -7866,5 +7967,46 @@ main.single .sections {
 main.single .sections img {
   margin-top: 2rem;
   border: 6px solid #35383A;
+}
+
+.blink {
+  -webkit-animation: blink 1s ease-out infinite;
+          animation: blink 1s ease-out infinite;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 

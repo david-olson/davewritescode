@@ -469,7 +469,15 @@ function initPlugins() {
       initPlugins();
     },
     afterClose: function() {
-
+            $('.dropzone').each(function(i, e) {
+                var $form = $(this);
+                var maxFiles = $form.data('max-files');
+                dz_name = 'dropzone_' + $form.data('field-name') + '_media_upload';
+                if (Dropzone[dz_name]) {
+                  Dropzone[dz_name].destroy();
+                  delete Dropzone[dz_name];
+                }
+              });
     }
   })
 
@@ -478,7 +486,11 @@ function initPlugins() {
     var $form = $(this);
     var maxFiles = $form.data('max-files');
     dz_name = 'dropzone_' + $form.data('field-name') + '_media_upload';
-    if (!Dropzone[dz_name]) {
+    if (Dropzone[dz_name]) {
+      Dropzone[dz_name].destroy();
+    }
+
+    // if (!Dropzone[dz_name]) {
       Dropzone[dz_name] = new Dropzone($form[0], {
         maxFiles: maxFiles,
         success: function (id, response) {
@@ -500,7 +512,7 @@ function initPlugins() {
           this.removeFile(response)
         }
       })
-    }
+    // }
 
   });
 

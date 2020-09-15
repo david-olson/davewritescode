@@ -66,7 +66,6 @@ class MediaController extends Controller
      */
     public function show(Request $request, $media)
     {
-
         $media = Media::find($media);
         if ($request->size) {
             $size = explode('x', $request->size);
@@ -88,9 +87,13 @@ class MediaController extends Controller
      * @param  \App\Models\Media  $media
      * @return \Illuminate\Http\Response
      */
-    public function edit(Media $media)
+    public function edit(Request $request, $media)
     {
-        //
+        $media_item = Media::find($media);
+
+        if ($request->ajax()) {
+            return response()->json(view('admin.components.media.edit-modal', compact('media_item'))->render());
+        }
     }
 
     /**
@@ -100,9 +103,24 @@ class MediaController extends Controller
      * @param  \App\Models\Media  $media
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Media $media)
+    public function update(Request $request, $media)
     {
-        //
+        $media_item = Media::find($media);
+        $media_item->update($request->only('name'));
+        $field_name = $request->field_name;
+        $limit = $request->limit;
+        if (preg_match('/media\/*/', $request->headers->get('referer'))) {
+            if ($request->ajax()) {
+                return response()->json([
+                    'view' => view('admin.components.media.table-row', ['media_item' => $media_item])->render(),
+                ]);
+            }
+        }
+        if ($request->ajax()) {
+            return response()->json([
+                'view' => view('admin.components.media.linked', ['media' => [$media_item], 'field_name' => $field_name, 'limit' => $limit])->render(),
+            ]);
+        }
     }
 
     /**

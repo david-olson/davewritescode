@@ -19,13 +19,13 @@
 			<ul class="project-list">
 				@foreach($projects as $project)
 					<li>
-						<button data-project="project_{{ $project->id }}">
+						<a href="{{ route('public.projects.show', $project->slug) }}" data-project="project_{{ $project->id }}">
 							<span class="number">{{ ($loop->iteration < 10) ? '0' . $loop->iteration : $loop->iteration }}.</span>
 							<span class="title">{{ $project->title }}</span>
 							@if($project->is_blue_ion)
 								<span class="blue-ion">Completed with Blue Ion</span>
 							@endif
-						</button>
+						</a>
 					</li>
 				@endforeach
 			</ul>
@@ -38,6 +38,7 @@
 					</article>
 				@endforeach
 				@include('public.components.monitor')
+				<div class="monitor-placeholder">{!! file_get_contents('./images/public/monitor-placeholder.svg') !!}</div>
 			</div>
 		</div>
 	</div>

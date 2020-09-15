@@ -760,6 +760,11 @@ input.error {
 	border-bottom: 1px solid $dark-gray;
 }
 
+.media-modal {
+	width: 98%;
+	max-width: 800px;
+}
+
 
 .file-upload-modal {
 	overflow: visible;

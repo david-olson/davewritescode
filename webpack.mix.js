@@ -40,4 +40,5 @@ mix.combine([
 	'node_modules/lazysizes/plugins/blur-up/ls.blur-up.js',
 	'node_modules/lazysizes/lazysizes.js',
 	'node_modules/gsap/dist/gsap.js',
+	'node_modules/sticky-js/dist/sticky.min.js',
 	], 'public/js/vendors.js');

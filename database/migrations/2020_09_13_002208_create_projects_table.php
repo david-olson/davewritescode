@@ -23,6 +23,7 @@ class CreateProjectsTable extends Migration
             $table->string('slug');
             $table->integer('order');
             $table->string('site_address')->nullable();
+            $table->string('declaration')->nullable();
             $table->text('description');
             $table->text('challenges');
             $table->timestamps();

@@ -36,7 +36,7 @@ class Media extends Model
                 }
             }, 365*60*24, true);
         } elseif($this->mediaType->mime == 'image/webp') {
-            $image = $this->path;
+            $image = Image::make(storage_path('app/' . $this->path));
         } else {
             $image = $this->getPreviewImage();
         }

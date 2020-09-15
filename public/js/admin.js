@@ -507,39 +507,53 @@ function initPlugins() {
       $('[data-children] input').trigger('change');
       initPlugins();
     },
-    afterClose: function afterClose() {}
+    afterClose: function afterClose() {
+      $('.dropzone').each(function (i, e) {
+        var $form = $(this);
+        var maxFiles = $form.data('max-files');
+        dz_name = 'dropzone_' + $form.data('field-name') + '_media_upload';
+
+        if (Dropzone[dz_name]) {
+          Dropzone[dz_name].destroy();
+          delete Dropzone[dz_name];
+        }
+      });
+    }
   });
   $('.dropzone').each(function (i, e) {
     var $form = $(this);
     var maxFiles = $form.data('max-files');
     dz_name = 'dropzone_' + $form.data('field-name') + '_media_upload';
 
-    if (!Dropzone[dz_name]) {
-      Dropzone[dz_name] = new Dropzone($form[0], {
-        maxFiles: maxFiles,
-        success: function success(id, response) {
-          $('#' + $form.data('field-name') + '_upload_list').after(response.view);
-          this.removeFile(id);
-          this.options.maxFiles = this.options.maxFiles - 1;
+    if (Dropzone[dz_name]) {
+      Dropzone[dz_name].destroy();
+    } // if (!Dropzone[dz_name]) {
 
-          if (this.options.maxFiles == 0) {
-            this.disable();
-            document.querySelector('#' + $form.data('field-name') + '_media_upload').classList.add('disabled');
-          }
-        },
-        error: function error(response) {
-          var errorMessages = '';
-          console.log(response);
 
-          if (response.status == 'error') {
-            errorMessages += '<h2 class="errors">There was an error. One or more of your files could not be uploaded. Other files have been successfully uploaded, but if you do not see one of your files below, it may have not met requirements or exceeded max file limits.</h2>';
-          }
+    Dropzone[dz_name] = new Dropzone($form[0], {
+      maxFiles: maxFiles,
+      success: function success(id, response) {
+        $('#' + $form.data('field-name') + '_upload_list').after(response.view);
+        this.removeFile(id);
+        this.options.maxFiles = this.options.maxFiles - 1;
 
-          $('#' + $form.data('field-name') + '_file_upload_errors').html(errorMessages);
-          this.removeFile(response);
+        if (this.options.maxFiles == 0) {
+          this.disable();
+          document.querySelector('#' + $form.data('field-name') + '_media_upload').classList.add('disabled');
         }
-      });
-    }
+      },
+      error: function error(response) {
+        var errorMessages = '';
+        console.log(response);
+
+        if (response.status == 'error') {
+          errorMessages += '<h2 class="errors">There was an error. One or more of your files could not be uploaded. Other files have been successfully uploaded, but if you do not see one of your files below, it may have not met requirements or exceeded max file limits.</h2>';
+        }
+
+        $('#' + $form.data('field-name') + '_file_upload_errors').html(errorMessages);
+        this.removeFile(response);
+      }
+    }); // }
   });
 
   if ($('.drag-and-drop').length > 0) {

@@ -27,7 +27,7 @@ Route::domain('admin.davewritescode.loc')->name('admin.')->group(function() {
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('public.about');
-Route::get('/uses', [App\Http\Controllers\HomeController::class, 'uses'])->name('public.uses');
+// Route::get('/uses', [App\Http\Controllers\HomeController::class, 'uses'])->name('public.uses');
 
 Route::group(['middleware' => [App\Http\Middleware\ProtectedByAccessCode::class]], function() {
 	Route::get('/projects', [App\Http\Controllers\PublicProjectController::class, 'index'])->name('public.projects.index');

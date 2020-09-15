@@ -146,27 +146,66 @@
   };
 })();
 
+var sticky = new Sticky('.project-display-area');
+console.log(sticky);
+
 if (document.querySelector('#image')) {
   window.fitText(document.querySelector('#image'), 5);
+}
+
+var inView = true;
+var deetTimeouts;
+
+if (document.querySelector('.single')) {
+  window.addEventListener('scroll', function () {
+    var details = document.querySelector('.project-details');
+    var secondaryDeets = document.querySelector('.secondary-project-details');
+
+    if (inView && details.getBoundingClientRect().y < 0 - details.getBoundingClientRect().height) {
+      inView = false;
+      clearTimeout(deetTimeouts);
+      secondaryDeets.classList.add('visible');
+      deetTimeouts = setTimeout(function () {
+        secondaryDeets.classList.add('fade-in');
+      }, 10);
+    } else if (!inView && details.getBoundingClientRect().y > 0 - details.getBoundingClientRect().height) {
+      inView = true;
+      clearTimeout(deetTimeouts);
+      secondaryDeets.classList.remove('fade-in');
+      deetTimeouts = setTimeout(function () {
+        secondaryDeets.classList.remove('visible');
+      }, 250);
+    }
+  });
 }
 
 var projectPreviews = document.querySelectorAll('[data-project]');
 projectPreviews.forEach(function (e) {
   e.addEventListener('mouseenter', function () {
-    if (!e.classList.contains('is-active')) {
-      e.classList.add('is-active');
-      var project_id = e.dataset.project;
-      var project = document.querySelector('#' + project_id);
-
-      if (!project.classList.contains('active')) {
-        hideAllProjectPreviews().then(function () {
-          showProject(project);
-          e.classList.add('is-active');
-        });
-      }
-    }
+    processHover(e);
   });
-}); // $(document).ready(function() {
+  e.addEventListener('focus', function () {
+    processHover(e);
+  });
+  e.addEventListener('click', function () {
+    document.querySelector('.project-list').classList.add('has-active');
+  });
+});
+
+function processHover(e) {
+  if (!e.classList.contains('is-active')) {
+    e.classList.add('is-active');
+    var project_id = e.dataset.project;
+    var project = document.querySelector('#' + project_id);
+
+    if (!project.classList.contains('active')) {
+      hideAllProjectPreviews().then(function () {
+        showProject(project);
+        e.classList.add('is-active');
+      });
+    }
+  }
+} // $(document).ready(function() {
 //   $('input#code').keyup(function() {
 //     var $input = $(this);
 //     if ($('input#code').val().length > 0) {
@@ -185,10 +224,16 @@ projectPreviews.forEach(function (e) {
 //   });
 // });
 
+
 function hideAllProjectPreviews() {
   return new Promise(function (resolve, reject) {
     document.querySelectorAll('[data-project].is-active').forEach(function (e) {
       e.classList.remove('is-active');
+    });
+    document.querySelector('.project-list').classList.remove('has-active');
+    var placeholder = document.querySelector('.monitor-placeholder');
+    TweenLite.to(placeholder, 0.25, {
+      opacity: 0
     });
     document.querySelectorAll('article.project.active').forEach(function (e) {
       e.classList.add('is-leaving');

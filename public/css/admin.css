@@ -9330,6 +9330,11 @@ input.error {
   border-bottom: 1px solid #8a8a8a;
 }
 
+.media-modal {
+  width: 98%;
+  max-width: 800px;
+}
+
 .file-upload-modal {
   overflow: visible;
   min-width: 800px;

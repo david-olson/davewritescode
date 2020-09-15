@@ -71,4 +71,9 @@ c:;;:cc:;,'',;:::,',;;'.....','.'.............................................',
     	$image = nl2br($image);
         return view('home', compact('image'));
     }
+
+    public function about()
+    {
+        return view('public.about');
+    }
 }

@@ -5,6 +5,8 @@
 	@endif
 @endif
 <div class="details">
+	<h2>{{ $project->declaration }}</h2>
+	<hr>
 	<p><span class="tech">{!! file_get_contents('./images/public/icon-tech.svg') !!} Tech: {{ $project->tech }}</span></p>
 	<p><span class="role">{!! file_get_contents('./images/public/icon-role.svg') !!} Role: {{ $project->role }}</span></p>
 	<div class="grid-x grid-padding-x preview-button-grid">
