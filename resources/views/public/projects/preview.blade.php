@@ -1,5 +1,9 @@
 @if($project->image)
-	<div class="preview-image-holder"><img src="{{ route('public.media.show', $project->image->id) }}" alt="{{ $project->image->alt }}"></div>
+	{{-- <div class="preview-image-holder"><img src="{{ route('public.media.show', $project->image->id) }}" alt="{{ $project->image->alt }}"></div> --}}
+	<div class="preview-image-holder">
+		@include('public.components.project-layouts.'. $project->slug)
+		{{-- @include('public.components.image-layouts.layout-4') --}}
+	</div>
 	@if($project->image->caption)
 		<p>{{ $project->image->caption }}</p>
 	@endif

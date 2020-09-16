@@ -163,7 +163,7 @@ function hideAllProjectPreviews() {
       var imageTarget = document.querySelector('#' + e.id + ' .preview-image-holder');
       var detailsTarget = document.querySelector('#' + e.id + ' .details');
       TweenLite.to(detailsTarget, 0.25, {opacity: 0, x: '-20px'});
-      TweenLite.to(imageTarget, 0.25, {opacity: 0, y: '-10px', onComplete: function() {
+      TweenLite.to(imageTarget, 0.25, {opacity: 0, onComplete: function() {
         e.classList.remove('visible')
         e.classList.remove('is-leaving');
       }});
@@ -185,9 +185,9 @@ function showProject(project) {
   project.classList.add('active', 'visible');
   var imageTarget = document.querySelector('#' + project.id + ' .preview-image-holder');
   var detailsTarget = document.querySelector('#' + project.id + ' .details');
-  TweenLite.set(imageTarget, {opacity: 0, y: '-10px'});
+  TweenLite.set(imageTarget, {opacity: 0});
   TweenLite.set(detailsTarget, {opacity: 0, x: '-20px'})
-  TweenLite.to(imageTarget, 0.25, {opacity: 1, y: '0px'});
+  TweenLite.to(imageTarget, 0.25, {opacity: 1});
   TweenLite.to(detailsTarget, 0.25, {x: '0', opacity: 1, delay: 0.25});
   return true;
 }
