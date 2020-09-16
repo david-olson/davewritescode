@@ -153,7 +153,9 @@ function hideAllProjectPreviews() {
     });
     document.querySelector('.project-list').classList.remove('has-active');
     var placeholder = document.querySelector('.monitor-placeholder');
+    var monitor = document.querySelector('pre#image');
     TweenLite.to(placeholder, 0.25, {opacity: 0});
+    TweenLite.to(monitor, 0.25, {opacity: 0})
 
     document.querySelectorAll('article.project.active').forEach(function(e) {
       e.classList.add('is-leaving');

@@ -26,7 +26,6 @@
 							<p>{{ $project->image->caption }}</p>
 						@endif
 					@endif
-					@include('public.components.monitor')
 					<div class="secondary-project-details">
 						<p><span class="tech">{!! file_get_contents('./images/public/icon-tech.svg') !!} Tech: {{ $project->tech }}</span></p>
 						<p><span class="role">{!! file_get_contents('./images/public/icon-role.svg') !!} Role: {{ $project->role }}</span></p>
