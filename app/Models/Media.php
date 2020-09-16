@@ -105,7 +105,7 @@ class Media extends Model
         $image = $this->getFullSizeImage();
         $image->fit($width, $height, function($constraint) {
             // $constraint->upsize();
-        }, $from);
+        }, 'top');
         $image->save(storage_path($image_path));
 
         return $image;

@@ -500,6 +500,7 @@ main.single {
 	    backface-visibility: hidden;
 	    transform-style: preserve-3d;
 	    display: flex;
+	    align-items: flex-start;
 	&--1 {
 		transform: rotateX(60deg) rotateY(0deg) rotateZ(-45deg);
 		.image-layout-scene__image-3 {
@@ -585,8 +586,15 @@ main.single {
 		    display: block;
 		}
 	}
-	&__image-3 {
-
+	&__image-7 {
+		transform: rotate(-90deg) translate3d(100px, -70px, 0px);
+		animation-name: dropOut;
+		animation-duration: 0.25s;
+		animation-timing-function: ease-out;
+		animation-delay: 1s;
+		animation-iteration-count: 1;
+		animation-direction: forwards;
+		animation-fill-mode: forwards;
 	}
 	&__image-4, &__image-6,  &__image-9 {
 		position: absolute;
@@ -610,7 +618,7 @@ main.single {
 		// transform: translate3d(150px, 100px, 100px) rotateX(-75deg);
 	}
 	&__image-8 {
-		transform: translate3d(-100%, 0, 100px);
+		transform: translate3d(-100%, 0, 170px);
 	}
 	&__image-9 {
 		transform: translate3d(-150px, -100px, 100px) rotateX(-75deg);
@@ -618,6 +626,9 @@ main.single {
 	&__image-10, &__image-11, &__image-12, &__image-13 {
 		position: relative;
 		margin: 10px;
+		position: relative;
+		backface-visibility: hidden;
+		transform-style: preserve-3d;
 		img {
 			position: relative;
 			z-index: 2;
@@ -634,6 +645,12 @@ main.single {
 	&__image-11 {
 		transform: translate3d(80px, 50px, 60px);
 		img {
+			transform: translate3d(0, 0, 20px);
+			transform-origin: center bottom;
+			position: relative;
+			max-width: 100%;
+		    height: auto;
+		    display: block;
 			animation-name: flipUp;
 			animation-duration: 0.25s;
 			animation-timing-function: ease-out;
@@ -642,6 +659,7 @@ main.single {
 			animation-direction: forwards;
 			animation-fill-mode: forwards;
 		}
+
 	}
 	&__image-12 {
 		transform: translate3d(-110px, 0px, 0px);
@@ -706,6 +724,14 @@ main.single {
 		transform: translate3d(80px, 0px, 80px) rotateX(-15deg);
 	}
 }
+@keyframes flipUp3 {
+	0% {
+		transform: translate3d(80px, 50px, 60px);
+	}
+	100% {
+		transform: translate3d(80px, 50px, 60px) rotateX(-15deg);
+	}
+}
 
 @keyframes expandUp {
 	0% {
@@ -722,5 +748,14 @@ main.single {
 	}
 	100% {
 		transform: translate3d(0, 0, -200px);
+	}
+}
+
+@keyframes dropOut {
+	0% {
+		transform: rotate(-90deg) translate3d(100px, -70px, 0px);
+	}
+	100% {
+		transform: rotate(-90deg) translate3d(100px, -70px, -140px);
 	}
 }
