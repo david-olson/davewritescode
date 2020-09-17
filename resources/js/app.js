@@ -62,7 +62,18 @@
 })();
 
 if (document.querySelector('#image')) {
-  window.fitText(document.querySelector('#image'), 5)
+
+  makeFitText(document.querySelector('#image')).then(function() {
+    document.querySelector('#image').classList.add('fit-to-area')
+  })
+}
+
+function makeFitText(element) {
+  return new Promise(function(resolve, reject) {
+    window.fitText(element, 5);
+    document.querySelector('.monitor-placeholder').classList.add('fit-to-area');
+    resolve();
+  });
 }
 
 var inView = true;
@@ -145,6 +156,8 @@ function hideAllProjectPreviews() {
     document.querySelector('.project-list').classList.remove('has-active');
     var placeholder = document.querySelector('.monitor-placeholder');
     var monitor = document.querySelector('pre#image');
+    monitor.classList.remove('fit-to-area');
+    placeholder.classList.remove('fit-to-area');
     TweenLite.to(placeholder, 0.25, {opacity: 0});
     TweenLite.to(monitor, 0.25, {opacity: 0})
 
