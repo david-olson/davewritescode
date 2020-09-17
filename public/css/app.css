@@ -7548,6 +7548,12 @@ h3 {
   font-weight: 700;
 }
 
+@media print, screen and (max-width: 39.99875em) {
+  .menu a {
+    font-size: 13px;
+  }
+}
+
 hr {
   border-bottom-color: #ECFFD8;
 }
@@ -8122,6 +8128,14 @@ main.single .sections img {
   transform: rotateX(60deg) rotateY(0deg) rotateZ(-45deg);
 }
 
+@media print, screen and (max-width: 39.99875em) {
+  .image-layout-scene--1 {
+    max-width: 87%;
+    margin: 0 auto;
+    margin-left: 50px;
+  }
+}
+
 .image-layout-scene--1 .image-layout-scene__image-3 img {
   -webkit-animation-name: flipUp;
           animation-name: flipUp;
@@ -8166,6 +8180,12 @@ main.single .sections img {
   margin-bottom: 130px;
 }
 
+@media print, screen and (max-width: 39.99875em) {
+  .image-layout-scene--3 {
+    margin-right: 80px;
+  }
+}
+
 .image-layout-scene--3 .image-layout-scene__image-4 {
   -webkit-animation-name: expandUp;
           animation-name: expandUp;
@@ -8204,8 +8224,22 @@ main.single .sections img {
   transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg) translateZ(-120px) translateX(160px);
 }
 
+@media print, screen and (max-width: 39.99875em) {
+  .image-layout-scene--4 {
+    margin-left: -100px;
+    margin-bottom: 140px;
+  }
+}
+
 .image-layout-scene--5 {
   transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);
+}
+
+@media print, screen and (max-width: 39.99875em) {
+  .image-layout-scene--5 {
+    margin-left: 60px;
+    margin-bottom: -60px;
+  }
 }
 
 .image-layout-scene__group {
@@ -8535,6 +8569,7 @@ main.single .sections img {
   text-align: center;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .project-thumbnails a {

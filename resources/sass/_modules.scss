@@ -30,6 +30,12 @@ h1, h2, h3 {
 	font-weight: 700;
 }
 
+.menu a {
+	@include breakpoint(small down) {
+		font-size: 13px;
+	}
+}
+
 hr {
 	border-bottom-color: $green;
 }
@@ -503,6 +509,11 @@ main.single {
 	    align-items: flex-start;
 	&--1 {
 		transform: rotateX(60deg) rotateY(0deg) rotateZ(-45deg);
+		@include breakpoint(small down) {
+			max-width: 87%;
+			margin: 0 auto;
+			margin-left: 50px;
+		}
 		.image-layout-scene__image-3 {
 			img {
 				animation-name: flipUp;
@@ -534,6 +545,9 @@ main.single {
 		transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);
 		margin-top: 150px;
 		margin-bottom: 130px;
+		@include breakpoint(small down) {
+			margin-right: 80px;
+		}
 		.image-layout-scene__image-4 {
 			animation-name: expandUp;
 			animation-duration: 0.25s;
@@ -555,9 +569,17 @@ main.single {
 	}
 	&--4 {
 		transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg) translateZ(-120px) translateX(160px);
+		@include breakpoint(small down) {
+			margin-left: -100px;
+			margin-bottom: 140px;
+		}
 	}
 	&--5 {
 		transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);
+		@include breakpoint(small down) {
+			margin-left: 60px;
+			margin-bottom: -60px;
+		}
 	}
 	&__group {
 		display: flex;
@@ -768,6 +790,7 @@ main.single {
 	text-align: center;
 	align-items: center;
 	justify-content: center;
+	flex-wrap: wrap;
 	a {
 		display: block;
 		padding: 8px;
