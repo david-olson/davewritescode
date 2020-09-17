@@ -244,12 +244,12 @@ ul.project-list {
 		}
 		.blue-ion {
 			position: absolute;
-			top: -8px;
+			top: 8px;
 			font-weight: 100;
 			font-size: 18px;
 			right: 0.5rem;
 			opacity: 0;
-			transform: translateY(-10px);
+
 			transition: opacity 0.25s ease-out, transform 0.25s ease-out;
 			display: none;
 			@include breakpoint(medium) {
@@ -283,12 +283,16 @@ ul.project-list {
 		width: 100%;
 		top: 0;
 		left: 0;
-		display: none;
-		// opacity: 0;
+		// display: none;
+		visibility: hidden;
+		&.loaded {
+			// visibility: initial;
+			// display: none;
+		}
 		// transform: translateY(-10px);
 		transition: transform 0.25s ease-out, opacity 0.25s ease-out;
 		&.visible {
-			display: block;
+			visibility: initial;
 		}
 		&.active {
 
@@ -514,32 +518,9 @@ main.single {
 			margin: 0 auto;
 			margin-left: 50px;
 		}
-		.image-layout-scene__image-3 {
-			img {
-				animation-name: flipUp;
-				animation-duration: 0.25s;
-				animation-timing-function: ease-out;
-				animation-delay: 1s;
-				animation-iteration-count: 1;
-				animation-direction: forwards;
-				animation-fill-mode: forwards;
-			}
-		}
 	}
 	&--2 {
 		transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);
-		.image-layout-scene__image-2 {
-			img {
-				animation-name: flipUp;
-				animation-duration: 0.25s;
-				animation-timing-function: ease-out;
-				animation-delay: 1s;
-				animation-iteration-count: 1;
-				animation-direction: forwards;
-				animation-fill-mode: forwards;
-			}
-		}
-
 	}
 	&--3 {
 		transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);
@@ -547,24 +528,6 @@ main.single {
 		margin-bottom: 130px;
 		@include breakpoint(small down) {
 			margin-right: 80px;
-		}
-		.image-layout-scene__image-4 {
-			animation-name: expandUp;
-			animation-duration: 0.25s;
-			animation-timing-function: ease-out;
-			animation-delay: 1s;
-			animation-iteration-count: 1;
-			animation-direction: forwards;
-			animation-fill-mode: forwards;
-		}
-		.image-layout-scene__image-6 {
-			animation-name: expandDown;
-			animation-duration: 0.25s;
-			animation-timing-function: ease-out;
-			animation-delay: 1s;
-			animation-iteration-count: 1;
-			animation-direction: forwards;
-			animation-fill-mode: forwards;
 		}
 	}
 	&--4 {
@@ -610,13 +573,6 @@ main.single {
 	}
 	&__image-7 {
 		transform: rotate(-90deg) translate3d(100px, -70px, 0px);
-		animation-name: dropOut;
-		animation-duration: 0.25s;
-		animation-timing-function: ease-out;
-		animation-delay: 1s;
-		animation-iteration-count: 1;
-		animation-direction: forwards;
-		animation-fill-mode: forwards;
 	}
 	&__image-4, &__image-6,  &__image-9 {
 		position: absolute;
@@ -674,13 +630,6 @@ main.single {
 			max-width: 100%;
 		    height: auto;
 		    display: block;
-			animation-name: flipUp;
-			animation-duration: 0.25s;
-			animation-timing-function: ease-out;
-			animation-delay: 1s;
-			animation-iteration-count: 1;
-			animation-direction: forwards;
-			animation-fill-mode: forwards;
 		}
 
 	}
@@ -800,6 +749,58 @@ main.single {
 		transition: border-color 0.25s ease-out;
 		&:hover {
 			border-color: rgba($green, 1);
+		}
+	}
+}
+
+.animating {
+	.image-layout-scene__image-3 {
+		img {
+			animation-name: flipUp;
+			animation-duration: 0.25s;
+			animation-timing-function: ease-out;
+			animation-delay: 1s;
+			animation-iteration-count: 1;
+			animation-direction: forwards;
+			animation-fill-mode: forwards;
+		}
+	}
+	.image-layout-scene__image-4 {
+		animation-name: expandUp;
+		animation-duration: 0.25s;
+		animation-timing-function: ease-out;
+		animation-delay: 1s;
+		animation-iteration-count: 1;
+		animation-direction: forwards;
+		animation-fill-mode: forwards;
+	}
+	.image-layout-scene__image-6 {
+		animation-name: expandDown;
+		animation-duration: 0.25s;
+		animation-timing-function: ease-out;
+		animation-delay: 1s;
+		animation-iteration-count: 1;
+		animation-direction: forwards;
+		animation-fill-mode: forwards;
+	}
+	.image-layout-scene__image-7 {
+		animation-name: dropOut;
+		animation-duration: 0.25s;
+		animation-timing-function: ease-out;
+		animation-delay: 1s;
+		animation-iteration-count: 1;
+		animation-direction: forwards;
+		animation-fill-mode: forwards;
+	}
+	.image-layout-scene__image-11 {
+		img {
+			animation-name: flipUp;
+			animation-duration: 0.25s;
+			animation-timing-function: ease-out;
+			animation-delay: 1s;
+			animation-iteration-count: 1;
+			animation-direction: forwards;
+			animation-fill-mode: forwards;
 		}
 	}
 }

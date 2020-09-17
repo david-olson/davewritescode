@@ -152,7 +152,14 @@ if (document.querySelector('#image')) {
 }
 
 var inView = true;
-var deetTimeouts;
+var deetTimeouts; // Lazysizes Config ////
+////////////////////////
+
+var lazySizesConfig = lazySizesConfig || {};
+lazySizesConfig.expFactor = 3.75;
+lazySizesConfig.loadMode = 3;
+lazySizesConfig.preloadAfterLoad = true;
+lazySizesConfig.loadHidden = true;
 
 if (document.querySelector('.single')) {// window.addEventListener('scroll', function() {
   //   var details = document.querySelector('.project-details');
@@ -176,6 +183,13 @@ if (document.querySelector('.single')) {// window.addEventListener('scroll', fun
 }
 
 var projectPreviews = document.querySelectorAll('[data-project]');
+
+window.onload = function () {
+  document.querySelectorAll('.project-display-area article.project').forEach(function (e) {
+    e.classList.add('loaded');
+  });
+};
+
 projectPreviews.forEach(function (e) {
   e.addEventListener('mouseenter', function () {
     processHover(e);
@@ -249,6 +263,7 @@ function hideAllProjectPreviews() {
         onComplete: function onComplete() {
           e.classList.remove('visible');
           e.classList.remove('is-leaving');
+          e.classList.remove('animating');
         }
       });
     });
@@ -265,6 +280,7 @@ function showProject(project) {
   }
 
   project.classList.add('active', 'visible');
+  project.classList.add('animating');
   var imageTarget = document.querySelector('#' + project.id + ' .preview-image-holder');
   var detailsTarget = document.querySelector('#' + project.id + ' .details');
   TweenLite.set(imageTarget, {

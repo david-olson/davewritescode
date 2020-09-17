@@ -7791,12 +7791,11 @@ ul.project-list a .mobile-details {
 ul.project-list button .blue-ion,
 ul.project-list a .blue-ion {
   position: absolute;
-  top: -8px;
+  top: 8px;
   font-weight: 100;
   font-size: 18px;
   right: 0.5rem;
   opacity: 0;
-  transform: translateY(-10px);
   transition: opacity 0.25s ease-out, transform 0.25s ease-out;
   display: none;
 }
@@ -7856,12 +7855,12 @@ ul.project-list li > button.is-active {
   width: 100%;
   top: 0;
   left: 0;
-  display: none;
+  visibility: hidden;
   transition: transform 0.25s ease-out, opacity 0.25s ease-out;
 }
 
 .project-display-area article.project.visible {
-  display: block;
+  visibility: initial;
 }
 
 .project-display-area article.project .details {
@@ -8136,42 +8135,8 @@ main.single .sections img {
   }
 }
 
-.image-layout-scene--1 .image-layout-scene__image-3 img {
-  -webkit-animation-name: flipUp;
-          animation-name: flipUp;
-  -webkit-animation-duration: 0.25s;
-          animation-duration: 0.25s;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-direction: forwards;
-          animation-direction: forwards;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
 .image-layout-scene--2 {
   transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);
-}
-
-.image-layout-scene--2 .image-layout-scene__image-2 img {
-  -webkit-animation-name: flipUp;
-          animation-name: flipUp;
-  -webkit-animation-duration: 0.25s;
-          animation-duration: 0.25s;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-direction: forwards;
-          animation-direction: forwards;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
 }
 
 .image-layout-scene--3 {
@@ -8184,40 +8149,6 @@ main.single .sections img {
   .image-layout-scene--3 {
     margin-right: 80px;
   }
-}
-
-.image-layout-scene--3 .image-layout-scene__image-4 {
-  -webkit-animation-name: expandUp;
-          animation-name: expandUp;
-  -webkit-animation-duration: 0.25s;
-          animation-duration: 0.25s;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-direction: forwards;
-          animation-direction: forwards;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-.image-layout-scene--3 .image-layout-scene__image-6 {
-  -webkit-animation-name: expandDown;
-          animation-name: expandDown;
-  -webkit-animation-duration: 0.25s;
-          animation-duration: 0.25s;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-direction: forwards;
-          animation-direction: forwards;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
 }
 
 .image-layout-scene--4 {
@@ -8286,20 +8217,6 @@ main.single .sections img {
 
 .image-layout-scene__image-7 {
   transform: rotate(-90deg) translate3d(100px, -70px, 0px);
-  -webkit-animation-name: dropOut;
-          animation-name: dropOut;
-  -webkit-animation-duration: 0.25s;
-          animation-duration: 0.25s;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-direction: forwards;
-          animation-direction: forwards;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
 }
 
 .image-layout-scene__image-4,
@@ -8378,20 +8295,6 @@ main.single .sections img {
   max-width: 100%;
   height: auto;
   display: block;
-  -webkit-animation-name: flipUp;
-          animation-name: flipUp;
-  -webkit-animation-duration: 0.25s;
-          animation-duration: 0.25s;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-direction: forwards;
-          animation-direction: forwards;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
 }
 
 .image-layout-scene__image-12 {
@@ -8583,5 +8486,90 @@ main.single .sections img {
 
 .project-thumbnails a:hover {
   border-color: #ecffd8;
+}
+
+.animating .image-layout-scene__image-3 img {
+  -webkit-animation-name: flipUp;
+          animation-name: flipUp;
+  -webkit-animation-duration: 0.25s;
+          animation-duration: 0.25s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: forwards;
+          animation-direction: forwards;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.animating .image-layout-scene__image-4 {
+  -webkit-animation-name: expandUp;
+          animation-name: expandUp;
+  -webkit-animation-duration: 0.25s;
+          animation-duration: 0.25s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: forwards;
+          animation-direction: forwards;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.animating .image-layout-scene__image-6 {
+  -webkit-animation-name: expandDown;
+          animation-name: expandDown;
+  -webkit-animation-duration: 0.25s;
+          animation-duration: 0.25s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: forwards;
+          animation-direction: forwards;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.animating .image-layout-scene__image-7 {
+  -webkit-animation-name: dropOut;
+          animation-name: dropOut;
+  -webkit-animation-duration: 0.25s;
+          animation-duration: 0.25s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: forwards;
+          animation-direction: forwards;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.animating .image-layout-scene__image-11 img {
+  -webkit-animation-name: flipUp;
+          animation-name: flipUp;
+  -webkit-animation-duration: 0.25s;
+          animation-duration: 0.25s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: forwards;
+          animation-direction: forwards;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 

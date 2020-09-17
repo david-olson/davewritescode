@@ -70,6 +70,14 @@ if (document.querySelector('#image')) {
 var inView = true;
 var deetTimeouts
 
+// Lazysizes Config ////
+////////////////////////
+var lazySizesConfig = lazySizesConfig || {};
+lazySizesConfig.expFactor = 3.75;
+lazySizesConfig.loadMode = 3;
+lazySizesConfig.preloadAfterLoad = true;
+lazySizesConfig.loadHidden = true;
+
 if (document.querySelector('.single')) {
   // window.addEventListener('scroll', function() {
   //   var details = document.querySelector('.project-details');
@@ -94,6 +102,13 @@ if (document.querySelector('.single')) {
 
 
 var projectPreviews = document.querySelectorAll('[data-project]');
+
+window.onload = function() {
+  document.querySelectorAll('.project-display-area article.project').forEach(function(e) {
+    e.classList.add('loaded');
+  })
+}
+
 
 projectPreviews.forEach(function(e) {
   e.addEventListener('mouseenter', function() {
@@ -165,6 +180,7 @@ function hideAllProjectPreviews() {
       TweenLite.to(imageTarget, 0.25, {opacity: 0, onComplete: function() {
         e.classList.remove('visible')
         e.classList.remove('is-leaving');
+        e.classList.remove('animating');
       }});
     });
     resolve();
@@ -182,6 +198,7 @@ function showProject(project) {
     return false;
   }
   project.classList.add('active', 'visible');
+  project.classList.add('animating');
   var imageTarget = document.querySelector('#' + project.id + ' .preview-image-holder');
   var detailsTarget = document.querySelector('#' + project.id + ' .details');
   TweenLite.set(imageTarget, {opacity: 0});
