@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/app.css?ver={{ \Carbon\Carbon::now()->format('YmdHis') }}">
+    <link rel="stylesheet" href="/css/app.css?ver=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="/favicon.png">
     <title>David Olson | Full-Stack Web Developer</title>
@@ -19,6 +19,6 @@
 
     {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> --}}
     <script src="/js/vendors.js"></script>
-    <script src="/js/app.js?ver={{ \Carbon\Carbon::now()->format('YmdHis') }}"></script>
+    <script src="/js/app.js?ver=1"></script>
 </body>
 </html>

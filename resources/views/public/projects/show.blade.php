@@ -19,7 +19,7 @@
 	<main class="single">
 		<div class="grid-x grid-padding-x">
 			<div class="large-6 cell left-sidebar">
-				<div class="project-display-area animating" data-sticky-for="1024">
+				<div class="project-display-area animating">
 					@if($project->image)
 						{{-- <div class="preview-image-holder"><img src="{{ route('public.media.show', $project->image->id) }}" alt="{{ $project->image->alt }}"></div> --}}
 						<div class="preview-image-holder">
@@ -33,7 +33,7 @@
 					<div class="project-thumbnails">
 						@foreach($project->sections()->whereNotIn('id', $ignore)->where('type', 'media')->get() as $section)
 							<a data-fslightbox="project" href="{{ route('public.media.show', [$section->media->id, $section->media->mediaType->extension]) }}">
-								<img src="{{ route('public.media.show', [$section->media->id, $section->media->mediaType->extension]) }}?size=100x100" alt="">
+								<img class="lazyload" data-src="{{ route('public.media.show', [$section->media->id, $section->media->mediaType->extension]) }}?size=100x100" alt="">
 							</a>
 						@endforeach
 					</div>
