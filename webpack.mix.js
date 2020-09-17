@@ -34,11 +34,7 @@ mix.combine([
 
 mix.combine([
 	// Lazysizes Image Loading
-	'node_modules/lazysizes/plugins/respimg/ls.respimg.js',
-	'node_modules/lazysizes/plugins/object-fit/ls.object-fit.js',
-	'node_modules/lazysizes/plugins/parent-fit/ls.parent-fit.js',
-	'node_modules/lazysizes/plugins/blur-up/ls.blur-up.js',
+	'node_modules/fslightbox/index.js',
 	'node_modules/lazysizes/lazysizes.js',
 	'node_modules/gsap/dist/gsap.js',
-	'node_modules/sticky-js/dist/sticky.min.js',
 	], 'public/js/vendors.js');

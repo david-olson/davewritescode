@@ -48,7 +48,8 @@ class PublicProjectController extends Controller
      */
     public function show(Project $project)
     {
-        return view('public.projects.show', compact('project'));
+        $ignore = $project->sections()->where('type', 'media')->limit($project->image_count)->pluck('id')->toArray();
+        return view('public.projects.show', compact('project', 'ignore'));
     }
 
     /**

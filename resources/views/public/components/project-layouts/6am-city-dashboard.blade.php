@@ -1,1 +1,1 @@
-@include('public.components.image-layouts.layout-4')
+@include('public.components.image-layouts.layout-3')

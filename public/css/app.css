@@ -8285,6 +8285,7 @@ main.single .sections img {
 
 .image-layout-scene__image-4 {
   transform: translate3d(50px, 0, 20px);
+  z-index: 3;
 }
 
 .image-layout-scene__image-5 {
@@ -8526,5 +8527,26 @@ main.single .sections img {
   100% {
     transform: rotate(-90deg) translate3d(100px, -70px, -140px);
   }
+}
+
+.project-thumbnails {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-thumbnails a {
+  display: block;
+  padding: 8px;
+  border: 2px solid rgba(236, 255, 216, 0);
+  border-radius: 10px;
+  margin: 0 5px;
+  transition: border-color 0.25s ease-out;
+}
+
+.project-thumbnails a:hover {
+  border-color: #ecffd8;
 }
 

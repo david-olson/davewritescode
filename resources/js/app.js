@@ -61,8 +61,7 @@
   };
 })();
 
-var sticky = new Sticky('.project-display-area')
-console.log(sticky);
+// var sticky = new Sticky('.project-display-area')
 
 if (document.querySelector('#image')) {
   window.fitText(document.querySelector('#image'), 5)
@@ -72,25 +71,25 @@ var inView = true;
 var deetTimeouts
 
 if (document.querySelector('.single')) {
-  window.addEventListener('scroll', function() {
-    var details = document.querySelector('.project-details');
-    var secondaryDeets = document.querySelector('.secondary-project-details');
-    if (inView && details.getBoundingClientRect().y < 0 - details.getBoundingClientRect().height) {
-      inView = false;
-      clearTimeout(deetTimeouts)
-      secondaryDeets.classList.add('visible')
-      deetTimeouts = setTimeout(function() {
-        secondaryDeets.classList.add('fade-in')
-      }, 10);
-    } else if (!inView && details.getBoundingClientRect().y > 0 - details.getBoundingClientRect().height) {
-      inView = true;
-      clearTimeout(deetTimeouts);
-      secondaryDeets.classList.remove('fade-in');
-      deetTimeouts = setTimeout(function() {
-        secondaryDeets.classList.remove('visible');
-      }, 250)
-    }
-  });
+  // window.addEventListener('scroll', function() {
+  //   var details = document.querySelector('.project-details');
+  //   var secondaryDeets = document.querySelector('.secondary-project-details');
+  //   if (inView && details.getBoundingClientRect().y < 0 - details.getBoundingClientRect().height) {
+  //     inView = false;
+  //     clearTimeout(deetTimeouts)
+  //     secondaryDeets.classList.add('visible')
+  //     deetTimeouts = setTimeout(function() {
+  //       secondaryDeets.classList.add('fade-in')
+  //     }, 10);
+  //   } else if (!inView && details.getBoundingClientRect().y > 0 - details.getBoundingClientRect().height) {
+  //     inView = true;
+  //     clearTimeout(deetTimeouts);
+  //     secondaryDeets.classList.remove('fade-in');
+  //     deetTimeouts = setTimeout(function() {
+  //       secondaryDeets.classList.remove('visible');
+  //     }, 250)
+  //   }
+  // });
 }
 
 

@@ -26,6 +26,7 @@ class CreateProjectsTable extends Migration
             $table->string('declaration')->nullable();
             $table->text('description');
             $table->text('challenges');
+            $table->integer('image_count');
             $table->timestamps();
         });
     }

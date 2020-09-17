@@ -10,7 +10,7 @@ class ProjectSection extends Model
     use HasFactory;
 
     protected $fillable = [
-    	'title', 'project_id', 'type', 'media_id', 'content'
+    	'title', 'project_id', 'type', 'media_id', 'content', 'order'
     ];
 
     public function project()

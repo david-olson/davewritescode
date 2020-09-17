@@ -18,6 +18,7 @@ class CreateProjectSectionsTable extends Migration
             $table->string('title')->nullable();
             $table->bigInteger('project_id')->unsigned();
             $table->string('type');
+            $table->integer('order');
             $table->bigInteger('media_id')->unsigned()->nullable();
             $table->text('content')->nullable();
             $table->timestamps();

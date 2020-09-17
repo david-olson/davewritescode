@@ -607,6 +607,7 @@ main.single {
 	}
 	&__image-4 {
 		transform: translate3d(50px, 0, 20px);
+		z-index: 3;
 	}
 	&__image-5 {
 		transform: translate3d(50px, 0, 0px);
@@ -757,5 +758,25 @@ main.single {
 	}
 	100% {
 		transform: rotate(-90deg) translate3d(100px, -70px, -140px);
+	}
+}
+
+
+.project-thumbnails {
+	display: flex;
+	width: 100%;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	a {
+		display: block;
+		padding: 8px;
+		border: 2px solid rgba($green, 0);
+		border-radius: 10px;
+		margin: 0 5px;
+		transition: border-color 0.25s ease-out;
+		&:hover {
+			border-color: rgba($green, 1);
+		}
 	}
 }

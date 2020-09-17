@@ -27,7 +27,7 @@ class Project extends Model
 
     public function sections()
     {
-    	return $this->hasMany('App\Models\ProjectSection');
+    	return $this->hasMany('App\Models\ProjectSection')->orderBy('order');
     }
 
     public function image()

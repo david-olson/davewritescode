@@ -21,18 +21,29 @@
 			<div class="large-6 cell left-sidebar">
 				<div class="project-display-area" data-sticky-for="1024">
 					@if($project->image)
-						<div class="preview-image-holder"><img src="{{ route('public.media.show', $project->image->id) }}" alt="{{ $project->image->alt }}"></div>
+						{{-- <div class="preview-image-holder"><img src="{{ route('public.media.show', $project->image->id) }}" alt="{{ $project->image->alt }}"></div> --}}
+						<div class="preview-image-holder">
+							@include('public.components.project-layouts.'. $project->slug)
+							{{-- @include('public.components.image-layouts.layout-4') --}}
+						</div>
 						@if($project->image->caption)
 							<p>{{ $project->image->caption }}</p>
 						@endif
 					@endif
-					<div class="secondary-project-details">
+					<div class="project-thumbnails">
+						@foreach($project->sections()->whereNotIn('id', $ignore)->where('type', 'media')->get() as $section)
+							<a data-fslightbox="project" href="{{ route('public.media.show', $section->media->id) }}">
+								<img src="{{ route('public.media.show', $section->media->id) }}?size=100x100" alt="">
+							</a>
+						@endforeach
+					</div>
+					{{-- <div class="secondary-project-details">
 						<p><span class="tech">{!! file_get_contents('./images/public/icon-tech.svg') !!} Tech: {{ $project->tech }}</span></p>
 						<p><span class="role">{!! file_get_contents('./images/public/icon-role.svg') !!} Role: {{ $project->role }}</span></p>
 						@if($project->site_address)
 							<a class="preview-buttons"  href="{{ $project->site_address }}" target="_blank">{!! file_get_contents('./images/public/icon-link.svg') !!} Visit Site</a>
 						@endif
-					</div>
+					</div> --}}
 				</div>
 			</div>
 			<div class="large-5 large-offset-1 cell">
@@ -49,11 +60,11 @@
 				{!! $project->description !!}
 				<h2>Challenges</h2>
 				{!! $project->challenges !!}
-				<div class="sections">
+				{{-- <div class="sections">
 					@foreach($project->sections as $section)
 						@include('public.projects.sections.' . $section->type)
 					@endforeach
-				</div>
+				</div> --}}
 			</div>
 		</div>
 	</main>
