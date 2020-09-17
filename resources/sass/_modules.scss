@@ -486,6 +486,9 @@ main.single {
 		.preview-image-holder {
 			opacity: 1;
 			transform: translateY(0);
+			@include breakpoint(small down) {
+				min-height: 300px;
+			}
 		}
 	}
 
@@ -542,9 +545,11 @@ main.single {
 	&--1 {
 		transform: rotateX(60deg) rotateY(0deg) rotateZ(-45deg);
 		@include breakpoint(small down) {
+
 			max-width: 87%;
 			margin: 0 auto;
 			margin-left: 50px;
+			margin-top: 30px;
 		}
 	}
 	&--2 {
@@ -570,6 +575,7 @@ main.single {
 		@include breakpoint(small down) {
 			margin-left: 60px;
 			margin-bottom: -60px;
+			margin-top: 50px;
 		}
 	}
 	&__group {
@@ -597,6 +603,11 @@ main.single {
 			max-width: 100%;
 		    height: auto;
 		    display: block;
+		}
+	}
+	&__image-2 {
+		@include breakpoint(small down) {
+			max-width: 50%;
 		}
 	}
 	&__image-7 {
@@ -666,6 +677,9 @@ main.single {
 	}
 	&__image-13 {
 		transform: translate3d(-100px, -12px, 0px);
+		@include breakpoint(small down) {
+			max-width: 50%;
+		}
 	}
 	.below {
 		position: absolute;
