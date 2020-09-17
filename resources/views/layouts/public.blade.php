@@ -5,6 +5,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/app.css?ver={{ \Carbon\Carbon::now()->format('YmdHis') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.png">
     <title>David Olson | Full-Stack Web Developer</title>
 </head>
 <body class="home">
