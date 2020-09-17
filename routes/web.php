@@ -32,7 +32,7 @@ Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->nam
 Route::group(['middleware' => [App\Http\Middleware\ProtectedByAccessCode::class]], function() {
 	Route::get('/projects', [App\Http\Controllers\PublicProjectController::class, 'index'])->name('public.projects.index');
 	Route::get('/projects/{project}', [App\Http\Controllers\PublicProjectController::class, 'show'])->name('public.projects.show');
-	Route::get('/media/{media}', [App\Http\Controllers\MediaController::class, 'show'])->name('public.media.show');
+	Route::get('/media/{media}.{extension}', [App\Http\Controllers\MediaController::class, 'show'])->name('public.media.show');
 });
 
 Route::get('/authenticate', [App\Http\Controllers\PublicAccessCodeController::class, 'index'])->name('public.access-code');

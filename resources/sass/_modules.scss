@@ -284,9 +284,10 @@ ul.project-list {
 		top: 0;
 		left: 0;
 		// display: none;
-		visibility: hidden;
+		opacity: 0.001;
 		&.loaded {
-			// visibility: initial;
+			visibility: hidden;
+			opacity: 1;
 			// display: none;
 		}
 		// transform: translateY(-10px);
@@ -476,6 +477,10 @@ main.single {
 			margin-top: 2rem;
 			border: 6px solid $dark;
 		}
+	}
+	.project-display-area {
+		opacity: 0.001;
+		animation: fadeIn 0.25s ease-out 0.75s 1 forwards;
 	}
 }
 
@@ -729,6 +734,15 @@ main.single {
 	}
 	100% {
 		transform: rotate(-90deg) translate3d(100px, -70px, -140px);
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0.001;
+	}
+	100% {
+		opacity: 1;
 	}
 }
 

@@ -7855,8 +7855,13 @@ ul.project-list li > button.is-active {
   width: 100%;
   top: 0;
   left: 0;
-  visibility: hidden;
+  opacity: 0.001;
   transition: transform 0.25s ease-out, opacity 0.25s ease-out;
+}
+
+.project-display-area article.project.loaded {
+  visibility: hidden;
+  opacity: 1;
 }
 
 .project-display-area article.project.visible {
@@ -8067,6 +8072,12 @@ main.single .sections {
 main.single .sections img {
   margin-top: 2rem;
   border: 6px solid #35383A;
+}
+
+main.single .project-display-area {
+  opacity: 0.001;
+  -webkit-animation: fadeIn 0.25s ease-out 0.75s 1 forwards;
+          animation: fadeIn 0.25s ease-out 0.75s 1 forwards;
 }
 
 .blink {
@@ -8463,6 +8474,26 @@ main.single .sections img {
 
   100% {
     transform: rotate(-90deg) translate3d(100px, -70px, -140px);
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0.001;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.001;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
 
