@@ -53,7 +53,7 @@
 					<p><span class="tech">{!! file_get_contents('./images/public/icon-tech.svg') !!} Tech: {{ $project->tech }}</span></p>
 					<p><span class="role">{!! file_get_contents('./images/public/icon-role.svg') !!} Role: {{ $project->role }}</span></p>
 					@if($project->site_address)
-						<a class="preview-buttons"  href="{{ $project->site_address }}" target="_blank">{!! file_get_contents('./images/public/icon-link.svg') !!} Visit Site</a>
+						<a class="preview-buttons" data-action="click_out_to_site_single" data-value="{{ $project->id }}"  href="{{ $project->site_address }}" target="_blank">{!! file_get_contents('./images/public/icon-link.svg') !!} Visit Site</a>
 					@endif
 				</div>
 				<hr>

@@ -37,7 +37,7 @@ Route::group(['middleware' => [App\Http\Middleware\ProtectedByAccessCode::class]
 
 Route::get('/authenticate', [App\Http\Controllers\PublicAccessCodeController::class, 'index'])->name('public.access-code');
 Route::post('/authenticate', [App\Http\Controllers\ActiveGuestController::class, 'store']);
-
+Route::post('/event-track', [App\Http\Controllers\ActiveGuestController::class, 'update']);
 
 
 

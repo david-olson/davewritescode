@@ -76,6 +76,14 @@ function makeFitText(element) {
   });
 }
 
+document.querySelectorAll('[data-action]').forEach(function(e) {
+  var action = e.dataset.action;
+  var value = e.dataset.value;
+    e.addEventListener('click', function() {
+      sendEvent(action, value);
+    })
+});
+
 var inView = true;
 var deetTimeouts
 
@@ -198,5 +206,12 @@ function showProject(project) {
   return true;
 }
 
-
+function sendEvent(action, value) {
+  var xhttp = new XMLHttpRequest();
+  var meta = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+  xhttp.open('POST', '/event-track?action=' + action + '&value=' + value, true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.setRequestHeader("X-CSRF-TOKEN", meta);
+  xhttp.send();
+}
 

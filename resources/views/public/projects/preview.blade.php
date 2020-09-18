@@ -19,7 +19,7 @@
 		</div>
 		@if($project->site_address)
 			<div class="shrink cell">
-				<a class="preview-buttons"  href="{{ $project->site_address }}" target="_blank">{!! file_get_contents('./images/public/icon-link.svg') !!} Visit Site</a>
+				<a class="preview-buttons" data-action="click_out_to_site_preview" data-value="{{ $project->id }}"  href="{{ $project->site_address }}" target="_blank">{!! file_get_contents('./images/public/icon-link.svg') !!} Visit Site</a>
 			</div>
 		@endif
 	</div>
