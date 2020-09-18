@@ -16,6 +16,7 @@ class CreateActiveGuestsTable extends Migration
         Schema::create('active_guests', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('code_id')->unsigned();
+            $table->string('user_ip')->nullable();
             $table->timestamp('expires_at');
             $table->timestamps();
         });

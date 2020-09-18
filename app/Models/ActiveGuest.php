@@ -10,7 +10,7 @@ class ActiveGuest extends Model
     use HasFactory;
 
     protected $fillable = [
-    	'code_id', 'expires_at'
+    	'code_id', 'expires_at', 'user_ip'
     ];
 
     protected $dates = ['expires_at'];
