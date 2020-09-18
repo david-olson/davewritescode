@@ -14,7 +14,7 @@
                             <p id="image">{!! $image !!}</p>
                         </div>
                     </div>
-                    <div class="large-12 cell large-order-2 medium-order-1 small-order-1"><p>Full stack web developer with experience in web applications, front-end development, design, and advertising. Self-taught in web development after starting a design career in advertising. Eager to expand knowledge of programming and software development. Driven to make any application or website accessible for all users so they can accomplish their goals easily, quickly, and efficiently.</p></div>
+                    <div class="large-12 cell large-order-2 medium-order-1 small-order-1"><p>Full-stack web developer with experience in web applications, front-end development, design, and advertising. Self-taught in web development after starting a design career in advertising. Eager to expand knowledge of programming and software development. Driven to make any application or website accessible for all users so they can accomplish their goals easily, quickly, and efficiently.</p></div>
                 </div>
                 <div class="now-playing">
 

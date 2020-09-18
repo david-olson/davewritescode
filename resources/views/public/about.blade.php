@@ -18,7 +18,7 @@
                 <h2 class="intro-sub">Full Stack Web Development
                     <br>Charleston, SC</h2>
                 <p><a href="#" class="twitter no-ul">{{ '@davewritescode' }}</a> <a href="#" class="insta no-ul">{{ '@davidolson' }}</a></p>
-                <p>Full stack web developer with experience in web applications, front-end development, design, and advertising. After starting a career in advertising I turned my attention to the web.</p>
+                <p>Full-stack web developer with experience in web applications, front-end development, design, and advertising. After starting a career in advertising I turned my attention to the web.</p>
                 <p>I began my career in advertising as a designer coming from an education in fine art. I taught myself to code first as a way to present my work in a portfolio, but then further because it had caught my interest. I use this base in design and art on a daily basis when making decisions.</p>
                 <p>At my core there is a drive to make any application or website digital experiences accessible for all users so they can accomplish their goals easily, quickly, and efficiently. My desire to solve problems is what initially drew me to programming and advertising. I stuck around because I found that there is always another problem to solve, another project to finish, and another bug to squash.</p>
                 <hr>
