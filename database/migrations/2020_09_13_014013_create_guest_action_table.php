@@ -15,6 +15,9 @@ class CreateGuestActionTable extends Migration
     {
         Schema::create('guest_action', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('guest_id')->unsigned()->nullable();
+            $table->string('action');
+            $table->string('value')->nullable();
             $table->timestamps();
         });
     }

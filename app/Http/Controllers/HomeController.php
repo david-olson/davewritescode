@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -69,11 +71,30 @@ c:;;:cc:;,'',;:::,',;;'.....','.'.............................................',
     	<?php
     	$image = ob_get_clean();
     	$image = nl2br($image);
+
+        $this->logPublicPageView();
+
         return view('home', compact('image'));
     }
 
     public function about()
     {
+        $this->logPublicPageView();
         return view('public.about');
+    }
+
+    public function logPublicPageView()
+    {
+        $guest = (session('active_guest_id')) ? session('active_guest_id') : null;
+
+        $route_name = request()->route()->getName();
+        DB::table('guest_action')->insert([
+            'guest_id' => $guest,
+            'action' => 'public_page_view',
+            'value' => $route_name,
+            'created_at' => Carbon::now(),
+            'updated_at'  => Carbon::now(),
+        ]);
+
     }
 }
