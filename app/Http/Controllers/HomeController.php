@@ -72,26 +72,25 @@ c:;;:cc:;,'',;:::,',;;'.....','.'.............................................',
     	$image = ob_get_clean();
     	$image = nl2br($image);
 
-        $this->logPublicPageView();
+        $this->logPublicPageView('home_page_view');
 
         return view('home', compact('image'));
     }
 
     public function about()
     {
-        $this->logPublicPageView();
+        $this->logPublicPageView('about_page_view');
         return view('public.about');
     }
 
-    public function logPublicPageView()
+    public function logPublicPageView($action)
     {
         $guest = (session('active_guest_id')) ? session('active_guest_id') : null;
 
-        $route_name = request()->route()->getName();
         DB::table('guest_action')->insert([
             'guest_id' => $guest,
-            'action' => 'public_page_view',
-            'value' => $route_name,
+            'action' => $action,
+            'value' => request()->ip(),
             'created_at' => Carbon::now(),
             'updated_at'  => Carbon::now(),
         ]);
