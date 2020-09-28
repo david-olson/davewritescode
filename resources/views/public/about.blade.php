@@ -4,7 +4,7 @@
     <header>
         <div class="grid-x grid-padding-x">
             <div class="large-auto cell large-order-1 medium-order-2 small-order-2">
-                <h1>davewritesco.de</h1>
+                <h1><a href="/">davewritesco.de</a></h1>
             </div>
             <div class="shrink large-order-2 medium-order-1 small-order-1 cell">
                 @include('public.components.nav')

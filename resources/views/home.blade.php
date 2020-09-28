@@ -7,6 +7,7 @@
                 <h1>David Olson</h1>
                 <h2 class="intro-sub">Full Stack Web Development
                     <br>Charleston, SC</h2>
+                <p><a href="/pdf/David-Olson-Resume.pdf">Download Resume</a></p>
                 {{-- <p><a href="#" class="twitter no-ul">{{ '@davewritescode' }}</a> <a href="#" class="insta no-ul">{{ '@davidolson' }}</a></p> --}}
                 <div class="grid-x">
                     <div class="large-12 cell large-order-1 medium-order-2 small-order-2">
@@ -53,7 +54,6 @@
                             <br>Mythic</h3>
                         <a href="https://mythic.us/" target="_blank">www.mythic.us</a>
                     </div>
-                    <p><a href="/pdf/David-Olson-Resume.pdf">Download Resume</a></p>
                 </div>
                 <div class="block">
                     <h2>Interests</h2>
