@@ -53,6 +53,7 @@
                             <br>Mythic</h3>
                         <a href="https://mythic.us/" target="_blank">www.mythic.us</a>
                     </div>
+                    <p><a href="/pdf/David-Olson-Resume.pdf">Download Resume</a></p>
                 </div>
                 <div class="block">
                     <h2>Interests</h2>
