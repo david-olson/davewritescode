@@ -37,20 +37,20 @@
                     <h2>Work History</h2>
                     <div class="job">
                         <p><small>2017 - Present</small></p>
-                        <h3>Web Developer
-                            <br> @ Blue Ion</h3>
+                        <h3>Full-Stack Web Developer
+                            <br>Blue Ion</h3>
                         <a href="http://www.blueion.com" target="_blank">www.blueion.com</a>
                     </div>
                     <div class="job">
                         <p><small>2015-2017</small></p>
                         <h3>Visual Designer
-                            <br>@ Premier Inc.</h3>
+                            <br>Premier Inc.</h3>
                         <a href="https://www.premierinc.com/" target="_blank">www.premierinc.com</a>
                     </div>
                     <div class="job">
                         <p><small>2014-2015</small></p>
                         <h3>Digital Designer
-                            <br>@ Mythic</h3>
+                            <br>Mythic</h3>
                         <a href="https://mythic.us/" target="_blank">www.mythic.us</a>
                     </div>
                 </div>
