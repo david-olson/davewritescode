@@ -57,7 +57,7 @@
                 </div>
                 <div class="block">
                     <h2>Interests</h2>
-                    <p>Whisky, Coffee, PC Building, Mechanical Keyboards, Fixed Gear Bicycles, The Detroit Lions, Rangers FC, Fly Fishing, Cooking, Hot Sauce, Photography, Art Museums, Golf, Herman Miller Furniture, Watches, Wikipedia</p>
+                    <p>Coffee, PC Building, Mechanical Keyboards, Whisky, Fixed Gear Bicycles, The Detroit Lions, Rangers FC, Fly Fishing, Cooking, Hot Sauce, Photography, Art Museums, Golf, Herman Miller Furniture, Watches, Wikipedia</p>
                 </div>
                 <div class="block">
                     <h2>Other</h2>
