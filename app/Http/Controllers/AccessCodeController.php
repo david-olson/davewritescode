@@ -41,48 +41,4 @@ class AccessCodeController extends Controller
         return redirect(route('admin.access-codes.index'))->with('message.style', 'success')->with('message.text', 'Access Code created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\AccessCode  $accessCode
-     * @return \Illuminate\Http\Response
-     */
-    public function show(AccessCode $accessCode)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\AccessCode  $accessCode
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(AccessCode $accessCode)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\AccessCode  $accessCode
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, AccessCode $accessCode)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\AccessCode  $accessCode
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(AccessCode $accessCode)
-    {
-        //
-    }
 }
