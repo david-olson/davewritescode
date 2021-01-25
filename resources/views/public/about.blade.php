@@ -22,7 +22,7 @@
                 <p>I began my career in advertising as a designer coming from an education in fine art. I taught myself to code first as a way to present my work in a portfolio, but then further because it had caught my interest. I use this base in design and art on a daily basis when making decisions.</p>
                 <p>At my core there is a drive to make any application or website digital experiences accessible for all users so they can accomplish their goals easily, quickly, and efficiently. My desire to solve problems is what initially drew me to programming and advertising. I stuck around because I found that there is always another problem to solve, another project to finish, and another bug to squash.</p>
                 <hr>
-                <p>I live in Charleston with my beautiful wife Rebecca and our dog Genevieve. I drink what is probably considered an agressive amount of coffee, typcally in the form of espresso. I will correct you if you say e<b>s</b>presso wrong. We play a lot of board games around here, so be prepared for me to ask you about your strategy in Catan (2 wheats for 1 rock? Anyone?) or explain why Contessa / Assassin is the best combo in Coup. I keep track of scores and have winning percentages and point differentials on everyone who has played a game at my house for the last 2 years or so.</p>
+                <p>I live in Charleston with my beautiful wife Rebecca and our two dogs, Genevieve and Sherlock. I drink what is probably considered an agressive amount of coffee, typcally in the form of espresso. I will correct you if you say e<b>s</b>presso wrong. We play a lot of board games around here, so be prepared for me to ask you about your strategy in Catan (2 wheats for 1 rock? Anyone?) or explain why Contessa / Assassin is the best combo in Coup. I keep track of scores and have winning percentages and point differentials on everyone who has played a game at my house for the last 2 years or so.</p>
                 <p>Before quarantine you may have found me at one of my favorite neighborhood BBQ bars, coffee shops, or parks. Now I spend my time in places as diverse as my couch, my desk chair, or the other chair that is next to my couch.</p>
             </div>
             <div class="large-4 large-offset-2 cell large-text-right">
@@ -39,9 +39,9 @@
                 <div class="block using">
                     <h2>What I'm Using</h2>
                     <p><small>As if anyone cares about this.</small><br><br></p>
-                    <p><b>Chair:</b> Herman Mill Aeron</p>
+                    <p><b>Chair:</b> Herman Miller Aeron</p>
                     <p><b>Mouse:</b> Logitec MX Master</p>
-                    <p><b>Keyboard:</b> Rosewill NEON K85 RGB - Blue Switches</p>
+                    <p><b>Keyboard:</b> Keychron K4 - Optical Brown Switches</p>
                     <p><b>Headphones:</b> Sennheiser HD 4.40</p>
                     <p><b>CPU:</b> AMD Ryzen 5</p>
                     <p><b>MOBO:</b> ASRock B450M</p>
