@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::domain('admin.davewritescode.loc')->name('admin.')->group(function() {
+Route::domain(env('ADMIN_DOMAIN'))->name('admin.')->group(function() {
 	Auth::routes();
 	Route::get('/', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 	Route::resources([
