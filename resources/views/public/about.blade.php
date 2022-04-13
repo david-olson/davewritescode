@@ -38,17 +38,16 @@
                 </div>
                 <div class="block using">
                     <h2>What I'm Using</h2>
-                    <p><small>As if anyone cares about this.</small><br><br></p>
                     <p><b>Chair:</b> Herman Miller Aeron</p>
                     <p><b>Mouse:</b> Logitec MX Master</p>
-                    <p><b>Keyboard:</b> Keychron K4 - Optical Brown Switches</p>
-                    <p><b>Headphones:</b> Sennheiser HD 4.40</p>
+                    <p><b>Keyboard:</b> Keychron K3 - Optical Blue Switches</p>
+                    <p><b>Headphones:</b> Sony WH-1000XM4</p>
                     <p><b>CPU:</b> AMD Ryzen 5</p>
                     <p><b>MOBO:</b> ASRock B450M</p>
                     <p><b>GPU:</b> Radeon RX 580</p>
                     <p><b>Primary Storage:</b> WDBlue M.2 NVMe</p>
-                    <p><b>Editor:</b> Sublime</p>
-                    <p><b>Database:</b> SequelPro</p>
+                    <p><b>Editor:</b> PhpStorm</p>
+                    <p><b>Database:</b> SequelAce</p>
                     <p><b><a href="https://www.reddit.com/r/detroitlions/comments/8mrre2/ftp/" target="_blank">FTP</a>:</b> Filezilla</p>
                 </div>
             </div>
